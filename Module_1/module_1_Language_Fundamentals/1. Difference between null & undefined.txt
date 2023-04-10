@@ -1,0 +1,78 @@
+TABLE OF CONTENTS
+All programming languages have null values.
+
+But in JavaScript, it has both undefined and null.
+
+Undefined:
+In other languages, the data type is assigned during the declaration of a variable. In JavaScript, at the time of declaration of a variable, no data type is given. The data type is given after the value is assigned to the variable. So, until the variable is assigned a value, it has a datatype of undefined.
+
+Let's take a look at an example:
+
+//insert code
+COPY
+//insert code
+COPY
+
+let x;
+console.log(x); //output -> undefined
+console.log(typeof x); //output -> undefined
+Here, both the value of x is undefined, and the data type of x is undefined. Undefined is given as datatype to x because it has no value.
+
+Null:
+Null is nothing. Null is assigned to a variable or object when you want it to be empty or make it empty.
+
+Let's take a look at an example:
+
+//insert code
+COPY
+//insert code
+COPY
+let x = null;
+console.log(x); //output -> null
+Comparing undefined and null using equality(==):
+Equality only compares the value of variables and returns a Boolean value.
+
+Let's take a look at an example:
+
+
+COPY
+
+COPY
+let x; // here x will have datatype undefined as default
+let y = null;
+console.log(x == y); //output -> true
+This happens because both undefined and null have "nothing" as a value.
+
+Comparing undefined and null using strict equality(===):
+Strict equality compares both value and data type of variables and returns a Boolean value.
+
+Let's take a look at an example:
+
+
+COPY
+
+COPY
+let x; // x has a value of nothing and data type of undefined
+let y = null; // y has a value of nothing and data type of null
+console.log(x === y); //output -> false
+This happens because though the value of both variables is the same, their data types are different.
+
+Interview Questions:
+Q1. What is undefined in JavaScript?
+
+Answer: When a variable is declared but not assigned a value, it contains the value undefined, and its data type is also undefined.
+
+Q2. Output for equality between undefined and null?
+
+Answer: The output for equality between undefined and null is true.
+
+Q3. Output for strict equality between undefined and null?
+
+Answer: The output for strict equality between undefined and null is false.
+
+Note: that if you use the typeof operator with null, it displays an object, but that is incorrect from the beginning. In JavaScript, null is treated as a primitive data type.
+
+Q4. Can you explicitly assign undefined to a variable?
+
+Answer: Yes, you can explicitly assign undefined to a variable because undefined itself is a kind of keyword which you can use.
+
