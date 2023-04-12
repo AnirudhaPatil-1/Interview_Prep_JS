@@ -1,0 +1,79 @@
+Function Scope vs. Block Scope
+atomicjuggernaut.hashnode.dev/javascript-interview-question-function-scope-vs-block-scope
+JavaScript, like any other programming language, has a concept of scope that dictates the lifetime or availability of a variable or function. In this article, we will explore the difference between function scope and block scope, hoisting in JavaScript.
+
+In JavaScript, there are two types of scope: function scope and block scope. Before we delve into the difference between them, let's understand what scope means. When we talk about the scope of a variable or function, we are referring to its lifetime or availability.
+
+For instance, if you declare a variable inside a function, it won't be available outside that function. This is because the scope of the variable is limited to that function. Similarly, if you declare a variable inside a block statement like a loop or an if statement, it won't be available outside that block. This is because the scope of the variable is limited to that block.
+
+Let's take an example to understand this better:
+
+function a() {
+  var x = 10;
+}
+
+function b() {
+  console.log(x);
+}
+
+a();
+b();
+When we run the code above, it will give an error that x is not defined. This is because x is declared in function a and is not available outside that function. The scope of x is limited to function a.
+
+Global vs. Local Scope
+The scope of a variable in JavaScript can be local or global. A local variable is declared inside a function or a block, while a global variable is declared outside all functions and blocks.
+
+Let's modify the previous example to make x a global variable:
+
+var x = 10;
+
+function a() {
+  x = x + 5;
+}
+
+function b() {
+  console.log(x);
+}
+
+a();
+b();
+Now, when we run the code above, it will output 15 because both function a and b are referring to the same variable x, which is global and available to the entire piece of code.
+
+Hoisting and Block Scope
+In ES5, variables declared with the var keyword are hoisted to the top of their scope. This means that the variable is available throughout the function, regardless of where it was declared.
+
+Hoisting
+Hoisting is a behaviour in JavaScript where variable and function declarations are moved to the top of their respective scopes during the compilation phase. This means that you can use a variable or function before it has been declared in your code. However, only the declaration is hoisted, not the initialization or assignment.
+
+For example:
+
+console.log(a); // output: undefined
+var a = 1;
+In this code, the variable a is declared and assigned the value of 1 on the same line. However, during hoisting, only the declaration of a is moved to the top, so when console.log(a) is executed, the value of a is undefined.
+
+However, in ES6, variables declared with let or const are not hoisted, and their scope is limited to the block in which they were declared.
+
+Let's take an example to understand this better:
+
+function c() {
+  console.log(x); // undefined
+  var x = 5;
+  console.log(x); // 5
+}
+
+function d() {
+  console.log(y); // ReferenceError: y is not defined
+  let y = 10;
+  console.log(y); // 10
+}
+
+c();
+d();
+In function c, the variable x is hoisted to the top of the function, but its value is undefined until it is assigned the value 5. In function d, the variable y is not hoisted, and a reference error is thrown when we try to access it before it is declared.
+
+Conclusion
+In conclusion, understanding the scope of variables and functions is crucial to writing efficient and bug-free code in JavaScript. While function scope and block scope may seem confusing at first, a solid grasp of these concepts can help you write cleaner and more readable code.
+
+The content of this blog post was inspired by the JavaScript - Marathon Interview Questions Series 2023 course on Udemy (udemy.com/course/javascript-marathon-interv..)
+
+
