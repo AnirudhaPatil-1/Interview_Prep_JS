@@ -1,0 +1,64 @@
+Understanding Automatic Semicolon Insertion (ASI) in JavaScript
+atomicjuggernaut.hashnode.dev/javascript-interview-question-what-is-automatic-semicolon-insertion-asi
+In JavaScript, semicolons are used to terminate statements. However, JavaScript allows you to omit the semicolon in certain situations. This feature is called automatic semicolon insertion (ASI), which is the topic of this blog.
+
+What is Automatic Semicolon Insertion (ASI)?
+When you forget to add a semicolon to the end of a statement, JavaScript may still execute the code without throwing an error. This is because JavaScript automatically adds a semicolon to the end of the line in certain situations. This process is called automatic semicolon insertion (ASI).
+
+For example, consider the following code:
+
+console.log("Hi")
+console.log("test");
+In this code, we have omitted the semicolon at the end of the first line. However, JavaScript will still execute both console.log statements without any errors. This is because JavaScript automatically inserts a semicolon after the first line.
+
+Similarly, consider the following code:
+
+let a = 4 *
+        5;
+console.log(a);
+In this code, we have added a line break after the multiplication sign. However, JavaScript still executes the code without any errors. This is because JavaScript automatically inserts a semicolon after the 4 * expression.
+
+Cases where ASI does not work
+While ASI can be convenient, there are some cases where it can cause problems. For example, consider the following code:
+
+javascriptCopy codefunction test() {
+  return
+  {
+    name: "test"
+  };
+}
+console.log(test());
+In this code, we have omitted the semicolon after the return statement. However, JavaScript will not execute the code as expected. This is because JavaScript does not insert a semicolon after the return statement when the next line starts with {, because it assumes that the return statement is complete.
+
+To fix this issue, we can either add a semicolon after the return statement or move the object literal(object opening curly brace) to the same line as the return statement:
+
+// Adding semicolon
+function test() {
+  return;
+  {
+    name: "test"
+  };
+}
+console.log(test());
+
+// Moving object literal to the same line
+function test() {
+  return {
+    name: "test"
+  };
+}
+console.log(test());
+Conclusion
+In conclusion, automatic semicolon insertion (ASI) is a convenient feature in JavaScript that allows you to omit semicolons in certain situations. However, it is important to be aware of cases where ASI does not work, as it can cause unexpected behaviour. As a best practice, it is recommended to always include semicolons at the end of statements to avoid any issues with ASI.
+
+The content of this blog post was inspired by the JavaScript - Marathon Interview Questions Series 2023 course on Udemy (udemy.com/course/javascript-marathon-interv..)
+
+Subscribe to my newsletter
+Read articles from directly inside your inbox. Subscribe to the newsletter, and don't miss out.
+
+Anirudha Patil
+Written by
+Anirudha Patil
+Hi, I'm Anirudha ! I'm currently learning frontend development and sharing my journey through blogging. Join me as I document my experiences, struggles, and victories as I become a skilled Frontend Developer.
+
+
