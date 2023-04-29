@@ -1,9 +1,3 @@
-// 23. string basics	-         string basics, escape sequence, special characters, emoticon
-// 24. ES6 template literal	 -    ``, template literal format, advantages
-// 25. .length, search methods-   indexOf, lastIndexOf() & search()
-// 26. extraction methods	   -  substring extraction methods - slice(), substr(), substring & char extraction methods- chatAt(), charCodeAt
-// 27. case conversion, replace()-case conversion - toLowerCase(), toUpperCase() & replace()
-
 // String basics - 
 // '', "", ``,
 
