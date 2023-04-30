@@ -36,7 +36,7 @@ dt.setDate(02);
 console.log(dt); //2024-02-01T18:37:19.066Z
 
 //Date.parse
-console.log("--------.setDate()----------");
+console.log("--------.Date.parse----------");
 //converts the date into milliseconds
 dt = Date.parse("2020-01-02");
 console.log(dt); //1577923200000
@@ -48,9 +48,7 @@ dt = new Date();
 console.log(dt); //2023-04-29T18:45:40.762Z
 let arrMonths = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 console.log(dt.getMonth()); //3
-console.log(`present month: ${arrMonths[dt.getMonth()]}`); //present month: April
-
-//.setDate()
+console.log(`present month: ${arrMonths[dt.getMonth()]}`); //present month: April//.setDate()
 console.log("--------.setDate()----------");
 dt = new Date();
 console.log(`present Date: ${dt}`); //present Date: Sun Apr 30 2023 00:21:41 GMT+0530 (India Standard Time)
