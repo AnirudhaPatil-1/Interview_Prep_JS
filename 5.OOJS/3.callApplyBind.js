@@ -11,7 +11,7 @@ let obj = {
 }
 // test(obj);
 
-//AS this cannot be assigned we use call apply bind method
+//AS "this" cannot be assigned we use call apply bind method
 
 test.call(obj, 5, 6); 
 /*{ a: 5 }
