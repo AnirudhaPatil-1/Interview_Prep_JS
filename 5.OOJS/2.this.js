@@ -15,4 +15,4 @@ let obj = {
     }
 }
 obj.test(); //{ test: [Function: test] }
-obj.test1(); //{} 
+// obj.test1(); //{} 
