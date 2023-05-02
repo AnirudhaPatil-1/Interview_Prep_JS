@@ -1,4 +1,7 @@
 //String is a inbuilt class in JS
+
+const { closeSync } = require("fs");
+
 //"extends" is the keyword used in ES6 to inherit the class
 class Child extends String{
     //custom method -> eg noc ie no of characters
@@ -28,6 +31,7 @@ class Parent{
 }
 
 class Child1 extends Parent{
+
 }
 
 const objChild = new Child1(2); 
@@ -41,9 +45,22 @@ objChild.parentMethod(); //Parent Method running
 
 
 console.log("-----------------------two constructors---------");
-class Parent1{
-    constructor
+
+class Parent2{
+    constructor(){
+        console.log("Parent2 constructor running");
+    }
 }
+
+class Child2 extends Parent2{
+    constructor(){
+        //ReferenceError: Must call super constructor in derived class before accessing 'this' or returning from derived constructor
+        console.log("Child2 constructor running");
+    }
+
+}
+
+let obj2 = new Child2();
 
 
 
