@@ -44,23 +44,52 @@ Parent Method running and has value: 2
 objChild.parentMethod(); //Parent Method running
 
 
+
+//SUPER word
 console.log("-----------------------two constructors---------");
 
 class Parent2{
-    constructor(){
+    constructor(a){
         console.log("Parent2 constructor running");
+        this.a = a;
+        console.log(a);
+    }
+    parentMethod(){
+        console.log("ParentMethod");
     }
 }
 
 class Child2 extends Parent2{
-    constructor(){
-        //ReferenceError: Must call super constructor in derived class before accessing 'this' or returning from derived constructor
+    constructor(a){
         console.log("Child2 constructor running");
+        super(a);
+        // this.a = a;
+        //ReferenceError: Must call super constructor in derived class before accessing 'this' or returning from derived constructor
+        // solution
     }
-
+    childMethod(){
+        super.parentMethod();
+        console.log("childMethod");
+    }
 }
 
-let obj2 = new Child2();
+let obj2 = new Child2(3);
+// output->
+// Parent2 constructor running
+// Child2 constructor running
+obj2.childMethod();
+/* OUTPUT ->
+Child2 constructor running
+Parent2 constructor running
+3
+ParentMethod
+childMethod
+*/
+
+// NOTE
+//super() - call parent constructor
+//super.method - call parent method
+//super.property - access parent property
 
 
 
