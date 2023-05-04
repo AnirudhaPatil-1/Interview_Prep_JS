@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding DOM</title>
+</head>
+<body>
+    <div>
+        <h1 id="message">Understanding DOM</h1>
+        <button onclick="updateMessage()">Change</button>
+    </div>
+    <script>
+        function updateMessage(){
+            const h1 = document.getElementById("message");
+            if(h1.innerHTML === "Understanding DOM"){
+                h1.innerHTML = "DOM Manipulation & API";
+            }else{
+                h1.innerHTML = "Understanding DOM";
+            }
+        }
+    </script>
+</body>
+</html>
