@@ -1,0 +1,59 @@
+<!-- globally available events  - because they are part of "window" object-->
+<!-- setTimeout()
+setInterval() -->
+<!-- setTimeOut(), setInterval(), clearInterval() are part of global object called "window" object 
+so no need to use document. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer events</title>
+</head>
+<body>
+    <h1 id="txt">Waiting...</h1>
+    <button onclick = "tryTimer()">Start Time</button>
+    <h1 id="Timer">Start Timer...?</h1>
+    <button onclick = "tryCounter()">Start Counter</button>
+    <button onclick= "stopCounter()">Stop Counter</button>
+    <script>
+        
+        // function tryTimer(){
+        //     setTimeout(test, 2000);
+        //     //only executes once
+        // }
+
+        // function test(){
+        //     let h1 = document.getElementById("txt");
+        //     h1.innerHTML = "Timed Out...";
+        // }
+
+        function tryTimer(){
+            // setTimeout(function(){
+            //     let h1 = document.getElementById("txt");
+            //     h1.innerHTML = "Timed out with anonymous function";
+            // }, 2000);
+
+            setTimeout(() => {
+                let h1 = document.getElementById("txt").innerHTML = "Timeout out with arrow function";
+            },2000);
+        }
+
+        let cnt = 0;
+        let timerObj;
+        function tryCounter(){
+            timerObj = setInterval(() => {
+                // document.getElementById("Timer").innerHTML = cnt;
+                document.getElementById("Timer").innerHTML = new Date();
+                cnt++;
+            }, 1000);
+        }
+        function stopCounter(){
+            clearInterval(timerObj);
+        }
+
+    </script>
+    
+</body>
+</html>
