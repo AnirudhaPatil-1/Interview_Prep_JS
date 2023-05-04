@@ -1,3 +1,8 @@
+<!-- event bubbling -->
+<!-- like a bubble it propagates from bottom to top -->
+<!-- eg. here window <-document <-body <-div <-button -->
+ <!-- event.stopPropagation() -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,8 +21,16 @@
             alert("div clicked");
         }
         function btnClick(){
-            alert(event.target.name);
+            // alert(event.target.name  );
+            //event.target returns the element which triggered the event
+            event.stopPropagation();
+            //event.stopPropagation()
             alert("btn clicked");
+
+            //default propagation is from bottom to top
+            //if we want to change the direction of propagation from top to bottom -> "capturing"
+            //for "capture" phase -> use eventListener() method to configure or bind the event
+            //.addEventListener syntax(action, function, boolean) -> by default its false-> bubbling phase propagation, true -> capturing phase propagation
         }
     </script>
     
