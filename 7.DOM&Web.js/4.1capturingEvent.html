@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capturing</title>
+</head>
+<body>
+    <div id = "div1">
+        <button id = "btn1">Click me!</button>
+    </div>
+    
+    <script>
+        let btn1 = document.getElementById("btn1");
+        let div1 = document.getElementById("div1");
+        window.onload = function(){
+            btn1.addEventListener("click", fnBtnClick, true);
+            div1.addEventListener("click", fnDivClick, true); //boolean value is for event propagation
+            //by default if not mention ->false ie bubbling phase propagation
+            //true -> capturing phase propagation
+        }
+        function fnDivClick(){
+            alert("Division clicked");
+        }
+        function fnBtnClick(){
+            alert("button clicked");
+        }
+    </script>
+</body>
+</html>
