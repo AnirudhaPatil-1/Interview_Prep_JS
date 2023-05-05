@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getElements</title>
+</head>
+<body>
+    <div>
+        <p>first para</p>
+        <p name="para">second para</p>
+        <p class = "head">third para</p>
+        <h3 class="head">heading2</h3>
+        <h3  name = "para">heading3</h3>
+        <h3>heading3</h3>
+    </div>
+    <button onclick=" btnClicked()">Click me !</button>
+    <script>
+        //getElementBy - > Id(), TagName(), ClassName(), Name()
+        function btnClicked(){
+            //by Tag name
+            const paras = document.getElementsByTagName("p");
+            console.log(paras);
+            //by class name
+            const h3s = document.getElementsByClassName("head");
+            console.log(h3s);
+            //by name
+            const namePara = document.getElementsByName("para");
+            console.log(namePara);
+            // NOTE
+            //getElementById() can only be applied on document.
+            //all others like getElementBy- TagName(), ClassName(), Name() can be applied can be applied anywhere
+        }
+    </script>
+</body>
+</html>
