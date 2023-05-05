@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getElementBy</title>
+</head>
+<body>
+    <h1 id = "content1">Content when page loaded</h1>
+    <button onclick="btnClicked()">Click me</button>
+    <script>
+        function btnClicked(){
+            // this methods give us a reference of element
+            const h1Ele = document.getElementById("content1");
+            h1Ele.innerHTML = "button clicked";
+        }
+    </script>
+    
+</body>
+</html>
