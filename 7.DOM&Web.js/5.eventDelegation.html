@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Delegation</title>
+    <style>
+        table, td, th{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <table onclick="tableClicked()">
+        <thead>
+            <tr>
+                <th>Code</th>
+                <th>Product</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1001</td>
+                <td>Apple</td>
+                <td>$20</td>
+            </tr>
+            <tr>
+                <td>1002</td>
+                <td>Orange</td>
+                <td>$10</td>
+            </tr>
+            <tr>
+                <td>1003</td>
+                <td>Banana</td>
+                <td ><input type="text"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        //content -> event delegation, event.target, event.target.tagName, event.target.innerHTML
+        function tableClicked(){
+            console.log(event.target); //gives the clicked element
+            console.log(event.target.tagName); //gives the element tag type
+            // console.log(event.target.innerHTML); //gives the content within the tag
+            if(event.target.tagName === "TD"){
+                console.log(event.target.innerHTML);
+            }else{
+                console.log(event.target.value)
+            }
+        }
+    </script>
+</body>
+</html>
