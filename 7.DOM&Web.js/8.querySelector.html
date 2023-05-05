@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>querySelector</title>
+</head>
+<body>
+    <div>
+        <p class = "para">first</p>
+        <p class = "para">second</p>
+        <p class = "para">third</p>
+    </div>
+    <button onclick="clickedButton()">Click me!</button>
+    <script>
+        function clickedButton(){
+            let element = document.querySelector(".para");
+            console.log(element); 
+            let elements = document.querySelectorAll(".para");
+            console.log(elements);
+            const temp = document.querySelector(":hover"); //pseudo class 
+        }
+    </script>
+    
+</body>
+</html>
