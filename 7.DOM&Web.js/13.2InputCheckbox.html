@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input type checkbox</title>
+    <style>
+        #divE{
+            background-color:lightskyblue;
+            width: 400px;
+            height: 300;
+            text-align: center;
+            /* font-size: 30px; */
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="divE">
+        <h1 id="status">Event status</h1>
+        Check me<input type="check" onchange="eHandler(this.checked)">
+    </div>
+    <script>
+        function eHandler(msg){
+            document.getElementById("status").innerHTML = msg;
+        }
+    </script>
+    
+</body>
+</html>
