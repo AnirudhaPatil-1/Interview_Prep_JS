@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClientXY, PageXY & ScreenXY</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+        }
+        div{
+            width: 300px;
+            height: 90px;
+            display: inline-block;
+            padding: 20px;
+            background-color: lightblue;
+            color: white;
+            font-size: 30px;
+            text-align: center;
+            margin-top:20px;
+        }
+        #main{
+            height: 500px;
+            width: 300px;
+            background-color: cornflowerblue;
+        }
+    </style>
+</head>
+<body onmousemove="eHandler()">
+    <div id="divE">X Y display</div>
+    <div id="main"></div>
+    <script>
+        function eHandler(){
+            let msg = '';
+            msg="clientX:" + event.clientX + ",Y:" + event.clientY;
+            msg=msg + "\n pageX:" + event.pageX + ",Y:" + event.pageY;
+            msg=msg + "\n screenX:" + event.screenX + ",Y:" + event.screenY;
+
+
+            document.getElementById("divE").innerHTML = msg;
+        }
+    </script>
+</body>
+</html>
