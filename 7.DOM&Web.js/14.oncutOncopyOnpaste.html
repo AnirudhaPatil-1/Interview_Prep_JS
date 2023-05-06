@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>oncut oncopy onpaste</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin-top: 40vh ;
+        }
+        #divE{
+            background-color: lightsalmon;
+            width: 400px;
+            height: 200px;
+            text-align: center;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="divE">
+        <h1 id="title">Sample Status</h1>
+        <input type="text" 
+        oncut="eHandler('oncut')"
+        oncopy="return false"
+        onpaste= event.preventDefault()>
+    </div>
+    <script>
+        function eHandler(msg){
+            document.getElementById("title").innerHTML = msg;
+        }
+        //two ways to prevent the event -> 
+        //return false eg. oncut = "return false"
+        // event.preventDefault() eg. oncut = event.preventDefault()
+    </script>
+</body>
+</html>
