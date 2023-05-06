@@ -6,6 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Input type checkbox</title>
     <style>
+        body{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin-top: calc(50vh - 150px);
+            /* align-content: center; */
+        }
         #divE{
             background-color:lightskyblue;
             width: 400px;
@@ -13,13 +21,31 @@
             text-align: center;
             /* font-size: 30px; */
             padding: 30px;
+            /* margin-top: 200px;
+            margin-left: calc(50% - 200px); */
+
+        }
+        input,select{
+            padding: 10px;
+            margin: 10px;
         }
     </style>
 </head>
 <body>
     <div id="divE">
         <h1 id="status">Event status</h1>
-        Check me<input type="check" onchange="eHandler(this.checked)">
+        Check me<input type="checkbox" onchange="eHandler(this.checked)"> <br/>
+        Radio1<input type="radio" value="radio1"
+        name="r" onchange="eHandler(this.value + '-' + this.checked)"/>
+        Radio2<input  type="radio" value="radio1"
+        name="r" onchange="eHandler(this.value + '-' + this.checked)"/> <br/>
+        <select  onchange="eHandler(this.options[this.selectedIndex].text)">Options
+            <option value="1">List Option 1</option>
+            <option value="2">List Option 2</option>
+            <option value="3">List Option 3</option>
+            <option value="4">List Option 4</option>
+        </select> <br/>
+        oninput event<input type="text" oninput="eHandler(this.value)">
     </div>
     <script>
         function eHandler(msg){
