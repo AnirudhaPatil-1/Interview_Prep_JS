@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event</title>
+</head>
+<body>
+    <!--  1.the inline way -->
+    <button onclick="alert('not the ideal way')">The inlineWay</button>
+    <button onclick="showMsg()">Common Way</button>
+    <button id="btn">Binding Event Later</button>
+    <button id="btn1">Binding with event listener</button>
+    <script>
+        //2. the common way
+        function showMsg(){
+            alert("the common way");
+        }
+        //3. binding event later
+        let btn = document.getElementById("btn");
+        btn.onclick = function(){
+            alert("Event bound later on");
+        }
+        //4. binding with event listener
+        let btn1 = document.getElementById("btn1");
+        btn1.addEventListener("click", btnClicked);
+        function btnClicked(){
+            alert("Add Event Listener clicked");
+        }
+
+
+    </script>
+</body>
+</html>
