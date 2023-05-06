@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard events</title>
+    <style>
+        div{
+            width: 300px;
+            height: 300px;
+            background-color: antiquewhite;
+            text-align: center;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="divE">
+        <h1 id = "msg">No events</h1>
+        <input type="text" onkeyup="eHandler('Keyup')" onkeydown="eHandler('Keydown')">
+        <input type="text" onkeypress="eHandler('Keypress')">
+    </div>
+    <script>
+        function eHandler(msg){
+            document.getElementById("msg").innerHTML = msg;
+        }
+    </script>
+    
+    
+</body>
+</html>
