@@ -8,6 +8,22 @@
 </head>
 <body>
     <h1>The Template tag</h1>
+    <button onclick="show()">Show</button>
+    <div id="login"></div>
+    <template id="tmp">
+            <label>login</label>
+            <input type="text">
+        </div>
+    </template>
+    
+    <script>
+        function show(){
+            const login = document.getElementById("login");
+            const template = document.getElementById("tmp");
+            const clone = template.content.cloneNode(true); //true will create deep copy
+            login.appendChild(clone);
+        }
+    </script>
     
 </body>
 </html>
