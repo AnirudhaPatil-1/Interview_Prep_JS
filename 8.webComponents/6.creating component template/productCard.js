@@ -48,7 +48,19 @@ class ProductCard extends HTMLElement{
         this.shadowRoot.querySelector('p').innerText = this.getAttribute('pStatus');
     }
     connectedCallback(){
-        console.log("method called!");
+        // console.log("method called!");
+        this.shadowRoot.querySelector('button').onclick = () => {
+            // console.log("button clicked");
+            // this.shadowRoot.querySelector('p').innerText = "Sold"; //wrong way - as the attribute stays the same
+            this.setAttribute('pStatus','Sold'); //status is change but we need to render the changes
+        }
+    }
+    static get observedAttributes(){
+        return ['pStatus'];
+    } 
+    attributeChangedCallback(attr, oldVal, newVal){
+        // alert(attr + ", " + oldVal + ", " + newVal); 
+        this.shadowRoot.querySelector('p').innerText = newVal;
     }
 }
 
