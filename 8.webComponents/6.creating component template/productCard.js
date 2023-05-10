@@ -28,7 +28,7 @@ template.innerHTML = `
     }
     </style>
         <div class="card">
-        <img src="https://www.freepnglogos.com/uploads/apple-png/vector-graphic-apple-fruit-nature-red-juicy-36.png">
+        <img src="">
         <div class="container">
             <h3>Product Name (eg. Apple, $40)</h3>
             <p id="">status(eg. sold or not)</p>
@@ -43,6 +43,9 @@ class ProductCard extends HTMLElement{
         const clone = template.content.cloneNode(true); //true for deep copy
         this.attachShadow({mode:"open"}); //open for access to shadow DOM
         this.shadowRoot.appendChild(clone);
+        this.shadowRoot.querySelector('h3').innerText = this.getAttribute('pName') + ", " + this.getAttribute('price');
+        this.shadowRoot.querySelector('img').src = this.getAttribute('pImg');
+        this.shadowRoot.querySelector('p').innerText = this.getAttribute('pStatus');
     }
 }
 
