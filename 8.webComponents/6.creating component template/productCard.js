@@ -47,7 +47,12 @@ class ProductCard extends HTMLElement{
         this.shadowRoot.querySelector('img').src = this.getAttribute('pImg');
         this.shadowRoot.querySelector('p').innerText = this.getAttribute('pStatus');
     }
+    connectedCallback(){
+        console.log("method called!");
+    }
 }
+
+
 
 window.customElements.define("product-card", ProductCard);
 
