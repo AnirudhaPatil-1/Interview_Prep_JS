@@ -1,42 +1,46 @@
 const template = document.createElement('template');
 template.innerHTML = `
     <style>
-    img{
-        width: 200px;
-        height: 200px;
-        margin: 20%;
-        margin-bottom: 5%;
-    }
-    .card{
-        margin-right: 35px;
-        display: inline-block;
-        width: 300px;
-        height: 440px;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    }
-    .container{
-        padding: 2px 16px;
-    }
-    .btn{
-        width: 70%;
-        padding: 10px;
-        margin-top: 2%;
-        margin-bottom: 8%;
-        background-color: rgb(40, 140, 255);
-        color: rgb(255, 255, 255);
-        border: none;
-    }
-    #trash{
-        width: 25%;
-    }
+        img{
+            width: 200px;
+            height: 200px;
+            margin: 20%;
+            margin-bottom: 5%;
+        }
+        .card{
+            margin-right: 35px;
+            display: inline-block;
+            width: 330px;
+            height: 530px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+            border-radius: 2%;
+            text-align: center;
+        }
+        .container{
+            padding: 2px 16px;
+        }
+        .btn{
+            width: 70%;
+            padding: 10px;
+            margin-top: 2%;
+            margin-bottom: 8%;
+            background-color: rgb(40, 140, 255);
+            color: rgb(255, 255, 255);
+            border: none;
+        }
+        #trash{
+            width: 25%;
+        }
+        
     </style>
         <div class="card">
+        <slot name="pTitle"></slot>
         <img src="">
         <div class="container">
             <h3>Product Name (eg. Apple, $40)</h3>
             <p id="">status(eg. sold or not)</p>
             <button  class="btn">Buy</button>
-            <button class="btn" id = "trash"><i class=fa fa-trash-o" id = "icon"></i> Trash</button>
+            <button class="btn" id = "trash"><i class="fa-light fa-trash-can"></i>Trash</button>
         </div>
     </div>
 `;
@@ -79,8 +83,6 @@ class ProductCard extends HTMLElement{
         this.shadowRoot.getElementById('trash').removeEventListener();
     }
 }
-
-
 
 window.customElements.define("product-card", ProductCard);
 
