@@ -56,11 +56,16 @@ class ProductCard extends HTMLElement{
         this.shadowRoot.querySelector('button').onclick = () => {
             // console.log("button clicked");
             // this.shadowRoot.querySelector('p').innerText = "Sold"; //wrong way - as the attribute stays the same
-            this.setAttribute('pStatus','Sold'); //status is change but we need to render the change
+            // this.setAttribute('pStatus','Sold'); //status is change but we need to render the change
+            //Better code -> use setter method
+            this.pStatus = "Sold";
             }
         this.shadowRoot.getElementById("trash").addEventListener('click', () => {
             this.remove();
         })
+    }
+    set pStatus(val){
+        this.setAttribute('pStatus', val);
     }
     static get observedAttributes(){
         return ['pStatus'];
