@@ -6,4 +6,4 @@ setTimeout(()=>{
 }, 2000);
 
 // Promise { <pending> }
-// Promise { <pending> }
+// Promise { <pending> }    
