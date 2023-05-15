@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX & XMLHTTPRequest (XHR)</title>
+</head>
+<body>
+    <script>
+        let request = new XMLHttpRequest();
+        // request.open(method, url, [async, user, password])
+        request.open("GET", "https://jsonplaceholder.typicode.com/comments");
+        request.responseType = "json";
+        request.send();
+        request.onload = function (){
+            if(request.status === 200){
+                console.log(request.status)
+                console.log(request.response);
+            }else{
+                console.log(request.status);
+                console.log("Invalid request")
+            }
+        }
+
+    </script>
+    
+</body>
+</html>
