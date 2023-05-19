@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Named import export</title>
+</head>
+<body>
+    <Script type="module">
+        // import {sum,cube} from './2.calc.js';
+        // console.log(sum(4, 3));
+        // console.log(cube(3));
+        import {total, Cube} from './calc.js';
+        console.log(total(2, 3));
+        console.log(Cube(3));
+
+
+    </Script>
+    
+</body>
+</html> 
