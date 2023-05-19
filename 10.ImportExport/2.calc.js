@@ -25,4 +25,5 @@ function cube(a){
     return a*a*a;
 }
 
-export {sum as total, cube as Cube}
+// export {sum as total, cube as Cube};
+export {sum, cube};
