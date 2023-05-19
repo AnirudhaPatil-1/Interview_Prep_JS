@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulk import</title>
+</head>
+<body>
+    <script type="module">
+        //1.
+        // import {sum, cube} from './2.calc.js';
+        // console.log(sum(2, 3));
+        // console.log(cube(3));
+
+        // 2. BULK IMPORT
+        import * as calc from './2.calc.js';
+        console.log(calc.sum(3, 4));
+        console.log(calc.cube(4));
+        
+
+    </script>
+    
+</body>
+</html>
