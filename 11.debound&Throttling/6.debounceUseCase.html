@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debounce Use case</title>
+    <style>
+        div{
+            width: 500px;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: monospace;
+            background-color: rgb(246, 145, 22);
+            color: white;
+            margin:auto;
+            margin-top: 15%;
+            border-radius: 20px;
+        }
+        input{
+            height: 30px;
+            width: 200px;
+            font-size: medium;
+            border-radius: 100px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Debounce Use Case</h1>
+        <input type="text" oninput="searchFn()">Enter String
+        <h2 id="kp">Key pressed count: 0</h2>
+        <h2 id="cc">API call count: 0</h2>
+    </div>
+    <script>
+        let kph = document.getElementById("kp");
+        let cch = document.getElementById("cc");
+        let keyCount = 0;
+        let apiCount = 0;
+        let dTimer;
+
+        function searchFn(){
+            keyPressedFn();
+            apiSearchFn();
+        }
+
+        function keyPressedFn(){
+            keyCount++;
+            kph.innerHTML = "Key Pressed Count: " + keyCount;
+        }
+        function apiSearchFn(){
+            window.clearTimeout(dTimer);
+            dTimer = window.setTimeout(()=> {
+                apiCount++;
+                cch.innerHTML = "API Call Count: " + apiCount;
+            }, 200);
+            
+        }
+    </script>
+    
+</body>
+</html>
