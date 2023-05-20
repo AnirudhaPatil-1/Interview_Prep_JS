@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Throttling count</title>
+    <style>
+        div{
+        width: 500px;
+        height: 500px;
+        background-color:cornflowerblue;
+        border: 2px solid rgb(88, 101, 222);
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        align-items: center;
+        margin-left: calc(50% - 500px/2);
+    }
+    h2{
+        color: white;
+        vertical-align: middle;
+        font-size: 40px;
+        font-family:monospace
+    }
+    body{
+        margin: 100px;
+    }
+        
+    </style>
+</head>
+<body>
+    <div onmousemove="showCounts()">
+        <h2 id="nCnt">Normal Count: 0</h2>
+        <h2 id="tCnt">Throttle Count: 0</h2>
+        <h2 id="dCnt">Debounce Count: 0</h2>
+    </div>
+    <script>
+        let nCnt = 0;
+        let tCnt = 0;
+        let dCnt = 0;
+        let nh2 = document.getElementById("nCnt");
+        let th2 = document.getElementById("tCnt");
+        let dh2 = document.getElementById("dCnt");
+        let fireThrottle = true;
+        let dTimer;
+        function showCounts(){
+            normalCount();
+            throttleCount();
+            debounceCount();
+        }
+        function normalCount(){
+            nCnt++;
+            nh2.innerHTML = "Normal Count: " + nCnt;
+        }
+        function throttleCount(){
+            if(fireThrottle){
+                tCnt++;
+                th2.innerHTML = "Throttle Count: " + tCnt;
+                fireThrottle = false;
+                setTimeout(()=> {
+                    fireThrottle = true;
+                }, 1000);
+            }
+        }
+        function debounceCount(){
+            window.clearInterval(dTimer);
+            dTimer = setTimeout(function(){
+                dCnt++;
+                dh2.innerHTML = "Debounce Count: " + dCnt;
+            }, 200);
+        }
+    </script>
+
+    
+</body>
+</html>

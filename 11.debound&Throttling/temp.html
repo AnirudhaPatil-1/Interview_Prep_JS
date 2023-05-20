@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <style>
+      button{
+          height: 180px;
+          width: 270px;
+          font-size: 50px;
+          border: none;
+          background-image: url('gun.png');
+         
+      }
+   </style>
+</head>
+<body>
+   <button onclick="fireBullet()"></button>
+   <h2 id="cC">Click Count:0</h2>
+   <h2 id="bC">Bullet Count:0</h2>
+   <script>
+ 
+       let bulletCount=0;
+       let clickCount=0;
+       let fire=true;
+       function fireBullet(){
+           clickCount++;
+           if(fire){
+             bulletCount++;
+             fire=false;
+            setInterval(function(){
+                fire=true;
+            },1000)
+   
+           }
+                 
+           document.getElementById("cC").innerHTML="Click Count:" + clickCount;
+           document.getElementById("bC").innerHTML="Bullet Count:" + bulletCount;
+ 
+        }
+   </script>
+</body>
+</html>

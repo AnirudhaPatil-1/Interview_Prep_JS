@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Throttling use case</title>
+    <style>
+        div{
+            width: 500px;
+            height: 500px;
+            background-color: aliceblue;
+            border: 2px solid black;
+            display: flex; 
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            margin-top: 10%;
+        }
+        button{
+            margin: 10px;
+            width: 100px;
+            height: 50px;
+            background-color: red;
+            color: white;
+            font-size: medium;
+            font-weight: bold;
+            border: 5px solid greenyellow;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="./gun.jpeg" alt="gun image">
+        <button onclick="fireBullet()">FIRE</button>
+        <h2 id="cC">Click Count: 0</h2>
+        <h2 id="bC">Bullets Fired: 0</h2>
+    </div>
+    <script>
+        let bulletCount = 0;
+        let clickCount = 0;
+        let ch = document.getElementById("cC");
+        let bh = document.getElementById("bC");
+        let fire = true;
+        
+        function fireBullet(){
+            clickCountFn();
+            bulletCountFn();
+        }
+        function clickCountFn(){
+            clickCount++;
+            ch.innerHTML = "Click Count: " + clickCount;
+        }
+        function bulletCountFn(){
+            if(fire){
+                bulletCount++;
+                bh.innerHTML = "Bullets Fired: " + bulletCount;
+                fire = false;
+                setTimeout(()=> {
+                    fire = true;
+                }, 1000);
+            }
+
+        }
+    </script>
+</body>
+</html>
