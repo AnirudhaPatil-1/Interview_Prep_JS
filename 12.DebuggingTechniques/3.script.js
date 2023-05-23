@@ -5,7 +5,7 @@ function sum(){
     if(n1 === '' || n2 === ''){
         showError();
     }else{
-        let res = n1 + n2;
+        let res = parseInt(n1) + parseInt(n2);
         let result = n1 + " + " + n2 + " = " + res;
         document.getElementById("result").innerHTML = result; 
     }
