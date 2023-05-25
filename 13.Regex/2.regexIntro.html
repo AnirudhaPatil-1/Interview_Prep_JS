@@ -9,7 +9,7 @@
 <body>
     <script>
         // 1.
-        let msg = "This is Case sensitive";
+        let msg = "This is Case sensitive case";
         let pos = msg.search("case");
         console.log(pos); //-1 ie does not exist
 
@@ -23,8 +23,15 @@
         console.log(pos2); //8
 
         // 4.
-        let str = msg.match(/case/);
+        let str = msg.match(/Case/);
         console.log(str);
+
+        // 5.
+        let str1 = msg.match(/Case/g);
+        console.log(str1);
+
+        let str2 = msg.match(/Case/gi);
+        console.log(str2);
     </script>
     
 </body>
