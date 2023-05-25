@@ -8,12 +8,23 @@
 </head>
 <body>
     <script>
+        // 1.
         let msg = "This is Case sensitive";
         let pos = msg.search("case");
         console.log(pos); //-1 ie does not exist
 
+        // 2.
         let pos1 = msg.search(/case/i); //8
         console.log(pos1);
+
+        // 3.
+        let ptrn = RegExp("case", "i");
+        let pos2 = msg.search(ptrn);
+        console.log(pos2); //8
+
+        // 4.
+        let str = msg.match(/case/);
+        console.log(str);
     </script>
     
 </body>
