@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex character classes</title>
+</head>
+<body>
+    <script>
+        let str = "I wonder why it's windy in worldint";
+
+        // 1.
+        let ptrn1 = /w.n/g;
+        let filter1 = str.match(ptrn1);
+        console.log(filter1); //win won
+
+        // 2.
+        let ptrn2 = /w.n\w+/g;
+        let filter2 = str.match(ptrn2);
+        console.log(filter2); //wonder windy
+
+
+ 
+    </script>
+    
+</body>
+</html>
