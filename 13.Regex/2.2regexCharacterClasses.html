@@ -26,8 +26,23 @@
         let filter3 = str.match(ptrn3);
         console.log(filter3);
 
-
+        // 4.
+        let ptrn4 = /.h\w+/g;
+        let filter4 = str.match(ptrn4);
+        console.log(filter4);
  
+        //5.
+        let str5 = "I teach html5, css3, react16.8 and angular8";
+        let ptrn5 = /\d/g;
+        let filter5 = str5.match(ptrn5);
+        console.log(filter5); //['5', '3', '1', '6', '8', '8']
+        
+        //6.
+        let str6 = "I teach html5, css3, react16.8 and angular8";
+        let ptrn6 = /\D/g;
+        let filter6 =  str6.match(ptrn6);
+        console.log(filter6); //(37) ['I', ' ', 't', 'e', 'a', 'c', 'h', ' ', 'h', 't', 'm', 'l', ',', ' ', 'c', 's', 's', ',', ' ', 'r', 'e', 'a', 'c', 't', '.', ' ', 'a', 'n', 'd', ' ', 'a', 'n', 'g', 'u', 'l', 'a', 'r']
+
     </script>
     
 </body>
