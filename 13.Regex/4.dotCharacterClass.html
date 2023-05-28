@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>. character class</title>
+</head>
+<body>
+    <script>
+        // 1.
+        let str = "hello hola";
+        let ptrn = /h.l/g;
+        let result = str.match(ptrn);
+        console.log(result); //Array(2)0: "hel"1: "hol"length: 2[[Prototype]]: Array(0)
+
+        // 2.
+        let str1 = "h\nello hola";
+        let ptrn1 = /h.l/g;
+        let result1 = str1.match(ptrn1);
+        console.log(result1); //['hol']
+
+        // 3.
+        let str3 = "h\nello hola";
+        let ptrn3 = /h.l/gs;
+        let result3 =  str3.match(ptrn3);
+        console.log(result3);
+
+    </script>
+    
+</body>
+</html>
