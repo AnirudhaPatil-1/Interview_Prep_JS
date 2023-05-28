@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>modifier m</title>
+</head>
+<body>
+    <script>
+        let msg = "Hello line1\nHello line2\nHello line3";
+        let ptrn = /Hello/g;
+        let filter = msg.match(ptrn);
+        console.log(filter); //Array(3)0: "Hello"1: "Hello"2: "Hello"length: 3[[Prototype]]: Array(0)
+
+        // 2.
+        let ptrn2 = /^Hello/gm;
+        let filter2 = msg.match(ptrn2);
+        console.log(filter2);
+
+        // 3.
+        let ptrn3 = /\d$/gm;
+        let filter3 = msg.match(ptrn3);
+        console.log(filter3); //(3) ['1', '2', '3']
+
+    </script>
+    
+</body>
+</html>
